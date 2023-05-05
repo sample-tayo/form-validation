@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/1c7ad5fba6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Form-Validation</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <div class="left-box">
+          <div class="icon"><i class="fa-duotone fa-badge-check"></i></div>
+          <div class="tex-01"><p>Quick and free sign-up</p></div>
+          <div class="tex-02">
+            <p>Enter your email address to create an account.</p>
+          </div>
+        </div>
+
+        <div class="left-box">
+          <div class="icon"><i class="fa-duotone fa-badge-check"></i></div>
+          <div class="tex-01"><p>Cross-platform solution</p></div>
+          <div class="tex-02">
+            <p>
+              Preview your newsletters on any device before sending them out.
+            </p>
+          </div>
+        </div>
+
+        <div class="left-box">
+          <div class="icon"><i class="fa-duotone fa-badge-check"></i></div>
+          <div class="tex-01"><p>Start sending emails</p></div>
+          <div class="tex-02">
+            <p>Use our API or pick our pre-built templates.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-container">
+        <form action="#" name="formfill" class="form" id="formfill">
+          <h2>Create your account</h2>
+          <!-- <small>Error Mesage</small> -->
+          <div class="form-field">
+            <label for="fullname">Full Name</label>
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              placeholder="enter your fullname"
+              autocomplete="off"
+            />
+            <small></small>
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="enter your email address"
+              autocomplete="off"
+            />
+            <small></small>
+          </div>
+
+          <div class="form-field">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Type to create password"
+              autocomplete="off"
+            />
+            <small></small>
+          </div>
+
+          <div class="checkbox-container">
+            <input type="checkbox" id="updates" name="updates" />
+            <label for="updates"
+              >Get updates and notification about our products</label
+            >
+          </div>
+
+          <button type="submit" value="sign-up">Type to create password</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
