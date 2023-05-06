@@ -41,9 +41,7 @@ const isEmailValid = function (email) {
 };
 
 const isPasswordSecure = function (password) {
-  const re = new RegExp(
-    "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})"
-  );
+  const re = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})");
   return re.test(password);
 };
 
@@ -82,9 +80,9 @@ const checkFullName = function () {
   //trim is to remove white spaces in the text content
 
   if (!isRequired(fullName)) {
-    showError(fullnameEl, "Username cannot be blank.");
+    showError(fullnameEl, "Fullname cannot be blank.");
   } else if (!isBetween(fullName.length, min, max)) {
-    showError(fullnameEl, `Username must between ${min} and ${max} characters`);
+    showError(fullnameEl, `Fullname must between ${min} and ${max} characters`);
   } else {
     showSuccess(fullnameEl);
     valid = true;
@@ -118,7 +116,7 @@ const checkPassword = function () {
   } else if (!isPasswordSecure(password)) {
     showError(
       passwordEl,
-      "Password must has at least 8 characters that include at least 1 lowercase character, 1 uppercase characters, 1 number, and 1 special character in (!@#$%^&*)"
+      "Password must be at least 8 characters with 1 upper case letter and 1 number."
     );
   } else {
     showSuccess(passwordEl);
@@ -134,7 +132,7 @@ form.addEventListener("submit", function (event) {
   event.preventDefault();
 
   // validate forms
-  let isFullNameValid = checkUsername(),
+  let isFullNameValid = checkFullName(),
     isEmailValid = checkEmail(),
     isPasswordValid = checkPassword(),
     isConfirmPasswordValid = checkConfirmPassword();
@@ -168,8 +166,8 @@ form.addEventListener(
   "input",
   debounce(function (e) {
     switch (e.target.id) {
-      case "username":
-        checkUsername();
+      case "fullname":
+        checkFullName();
         break;
       case "email":
         checkEmail();
